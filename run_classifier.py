@@ -337,11 +337,11 @@ class FeverProcessor(DataProcessor):
 
   def get_train_examples(self, data_dir):
     return self._create_examples(self._read_tsv(
-      os.path.join(data_dir, 'train.tsv')))
+      os.path.join(data_dir, 'train.tsv')), 'train')
 
   def get_dev_examples(self, data_dir):
     return self._create_examples(self._read_tsv(
-      os.path.join(data_dir, 'dev.tsv')))
+      os.path.join(data_dir, 'dev.tsv')), 'dev')
 
   def get_labels(self):
     return ["supports", "refutes", "nei"]

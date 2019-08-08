@@ -344,17 +344,18 @@ class FeverProcessor(DataProcessor):
       os.path.join(data_dir, 'dev.tsv')))
 
   def get_labels(self):
-    return ['supports', 'refutes', 'nei']
+    return ["supports", "refutes", "nei"]
 
   def _create_examples(self, lines, set_type):
     examples = []
     # format: <name> | <text_a> | <text_b> | <label>
     for i , line in enumerate(lines):
+      label = line[3] if line[3] != 'not enough info' else 'nei'
       examples.append(InputExample(
         guid="%s-%s" % (set_type, i),
         text_a=line[1],
         text_b=line[2],
-        label=line[3]
+        label=label
       ))
     return examples
 

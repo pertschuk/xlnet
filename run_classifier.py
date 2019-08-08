@@ -418,17 +418,6 @@ class StsbProcessor(GLUEProcessor):
 
     return examples
 
-
-class FeverProcessor(DataProcessor):
-  def get_train_examples(self, data_dir):
-    return self._create_examples(os.path.join(data_dir, 'train.tsv'))
-
-  def _create_examples(self, input_file):
-    examples = []
-
-
-
-
 def file_based_convert_examples_to_features(
     examples, label_list, max_seq_length, tokenize_fn, output_file,
     num_passes=1):

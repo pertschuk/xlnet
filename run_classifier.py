@@ -333,6 +333,32 @@ class MnliMatchedProcessor(GLUEProcessor):
     return ["contradiction", "entailment", "neutral"]
 
 
+class FeverProcessor(DataProcessor):
+
+  def get_train_examples(self, data_dir):
+    return self._create_examples(self._read_tsv(
+      os.path.join(data_dir, 'train.tsv')))
+
+  def get_dev_examples(self, data_dir):
+    return self._create_examples(self._read_tsv(
+      os.path.join(data_dir, 'dev.tsv')))
+
+  def get_labels(self):
+    return ['supports', 'refutes', 'nei']
+
+  def _create_examples(self, lines, set_type):
+    examples = []
+    # format: <name> | <text_a> | <text_b> | <label>
+    for i , line in enumerate(lines):
+      examples.append(InputExample(
+        guid="%s-%s" % (set_type, i),
+        text_a=line[1],
+        text_b=line[2],
+        label=line[3]
+      ))
+    return examples
+
+
 class MnliMismatchedProcessor(MnliMatchedProcessor):
   def __init__(self):
     super(MnliMismatchedProcessor, self).__init__()
@@ -390,6 +416,16 @@ class StsbProcessor(GLUEProcessor):
           InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
 
     return examples
+
+
+class FeverProcessor(DataProcessor):
+  def get_train_examples(self, data_dir):
+    return self._create_examples(os.path.join(data_dir, 'train.tsv'))
+
+  def _create_examples(self, input_file):
+    examples = []
+
+
 
 
 def file_based_convert_examples_to_features(

@@ -10,7 +10,7 @@ python run_classifier.py \
   --tpu=${TPU_NAME} \
   --do_train=True \
   --do_eval=True \
-  --task_name=mnli_mismatched \
+  --task_name=mnli_matched \
   --data_dir=${GS_ROOT}/${GLUE_DIR}/MNLI \
   --output_dir=${GS_ROOT}/proc_data/mnli \
   --model_dir=${GS_ROOT}/exp/mnli \

@@ -23,6 +23,6 @@ python run_classifier.py \
   --num_hosts=1 \
   --num_core_per_host=8 \
   --learning_rate=2e-5 \
-  --train_steps=100 \
+  --train_steps=100000 \
   --num_passes=3 \
   --save_steps=1000

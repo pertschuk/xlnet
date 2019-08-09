@@ -302,8 +302,8 @@ class ImdbProcessor(DataProcessor):
   def get_train_examples(self, data_dir):
     return self._create_examples(os.path.join(data_dir, "train"))
 
-  def get_dev_examples(self, data_dir):
-    return self._create_examples(os.path.join(data_dir, "test"))
+  # def get_dev_examples(self, data_dir):
+  #   return self._create_examples(os.path.join(data_dir, "test"))
 
   def _create_examples(self, data_dir):
     examples = []

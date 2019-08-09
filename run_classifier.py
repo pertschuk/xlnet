@@ -525,6 +525,8 @@ def file_based_input_fn_builder(input_file, seq_length, is_training,
     if is_training:
       d = d.shuffle(buffer_size=FLAGS.shuffle_buffer)
       d = d.repeat()
+    if FLAGS.do_eval:
+      d = d.repeat()
 
     d = d.apply(
         tf.contrib.data.map_and_batch(

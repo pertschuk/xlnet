@@ -12,7 +12,7 @@ python run_classifier.py \
   --do_eval=True \
   --task_name=fever \
   --data_dir=./${FEVER_DIR} \
-  --output_dir=${GS_ROOT} /fever_output \
+  --output_dir=${GS_ROOT}/fever_output \
   --model_dir=${GS_ROOT}/exp1/fever \
   --uncased=False \
   --spiece_model_file=${LARGE_DIR}/spiece.model \

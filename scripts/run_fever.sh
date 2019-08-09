@@ -6,7 +6,7 @@ export FEVER_DIR=fever
 export LARGE_DIR=xlnet_cased_L-24_H-1024_A-16
 
 python run_classifier.py \
-  --use_tpu=True \
+  --use_tpu=False \
   --tpu=${TPU_NAME} \
   --do_train=False \
   --do_eval=True \

@@ -359,6 +359,7 @@ class FeverProcessor(DataProcessor):
         text_b=line[2],
         label=label
       ))
+
     return examples
 
 

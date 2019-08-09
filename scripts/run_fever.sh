@@ -11,7 +11,7 @@ python run_classifier.py \
   --do_train=False \
   --do_eval=True \
   --task_name=fever \
-  --data_dir=${GS_ROOT}/${FEVER_DIR} \
+  --data_dir=./${FEVER_DIR} \
   --output_dir=${GS_ROOT} /fever_output \
   --model_dir=${GS_ROOT}/exp1/fever \
   --uncased=False \
@@ -19,6 +19,7 @@ python run_classifier.py \
   --model_config_path=${GS_ROOT}/${LARGE_DIR}/xlnet_config.json \
   --init_checkpoint=${GS_ROOT}/${LARGE_DIR}/xlnet_model.ckpt \
   --max_seq_length=128 \
+  --eval_batch_size=1 \
   --train_batch_size=128 \
   --num_hosts=1 \
   --num_core_per_host=8 \

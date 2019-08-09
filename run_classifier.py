@@ -807,7 +807,7 @@ def main(_):
 
     eval_results = []
     for global_step, filename in sorted(steps_and_files, key=lambda x: x[0]):
-      tf.logging.info('number of eval steps %s' % (len(eval_steps)))
+      tf.logging.info('number of eval steps %s' % (eval_steps))
       ret = estimator.evaluate(
           input_fn=eval_input_fn,
           steps=eval_steps,

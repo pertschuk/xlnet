@@ -351,6 +351,8 @@ class FeverProcessor(DataProcessor):
     # format: <name> | <text_a> | <text_b> | <label>
     for i , line in enumerate(lines):
       label = line[3] if line[3] != 'not enough info' else 'nei'
+      tf.logging.info("Eval Example: ( %s, %s, %s )" % (line[1], line[2], line[3]))
+
       examples.append(InputExample(
         guid="%s-%s" % (set_type, i),
         text_a=line[1],

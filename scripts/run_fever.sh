@@ -22,6 +22,6 @@ python run_classifier.py \
   --train_batch_size=128 \
   --num_hosts=1 \
   --num_core_per_host=8 \
-  --learning_rate=1e-5 \
+  --learning_rate=2e-5 \
   --train_steps=100000 \
   --num_passes=3

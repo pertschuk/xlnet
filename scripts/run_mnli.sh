@@ -19,9 +19,9 @@ python run_classifier.py \
   --model_config_path=${GS_ROOT}/${LARGE_DIR}/xlnet_config.json \
   --init_checkpoint=${GS_ROOT}/${LARGE_DIR}/xlnet_model.ckpt \
   --max_seq_length=128 \
-  --train_batch_size=64 \
+  --train_batch_size=128 \
   --num_hosts=1 \
   --num_core_per_host=8 \
-  --learning_rate=1e-5 \
-  --train_steps=1000000 \
-  --num_passes=5
+  --learning_rate=2e-5 \
+  --train_steps=50000 \
+  --num_passes=2

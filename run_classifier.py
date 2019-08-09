@@ -341,7 +341,7 @@ class FeverProcessor(DataProcessor):
 
   def get_dev_examples(self, data_dir):
     return self._create_examples(self._read_tsv(
-      os.path.join(data_dir, 'train.tsv')), 'dev')
+      os.path.join(data_dir, 'test.tsv')), 'dev')
 
   def get_labels(self):
     return ["supports", "refutes", "nei"]
@@ -525,8 +525,8 @@ def file_based_input_fn_builder(input_file, seq_length, is_training,
     if is_training:
       d = d.shuffle(buffer_size=FLAGS.shuffle_buffer)
       d = d.repeat()
-    if FLAGS.do_eval:
-      d = d.repeat()
+    # if FLAGS.do_eval:
+    #   d = d.repeat()
 
     d = d.apply(
         tf.contrib.data.map_and_batch(

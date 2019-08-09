@@ -8,7 +8,7 @@ export LARGE_DIR=xlnet_cased_L-24_H-1024_A-16
 python run_classifier.py \
   --use_tpu=True \
   --tpu=${TPU_NAME} \
-  --do_train=True \
+  --do_train=False \
   --do_eval=True \
   --task_name=fever \
   --data_dir=${GS_ROOT}/${FEVER_DIR} \

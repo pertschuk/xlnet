@@ -525,8 +525,6 @@ def file_based_input_fn_builder(input_file, seq_length, is_training,
     if is_training:
       d = d.shuffle(buffer_size=FLAGS.shuffle_buffer)
       d = d.repeat()
-    # if FLAGS.do_eval:
-    #   d = d.repeat()
 
     d = d.apply(
         tf.contrib.data.map_and_batch(
@@ -774,6 +772,7 @@ def main(_):
     eval_file_base = "{}.len-{}.{}.eval.tf_record".format(
         spm_basename, FLAGS.max_seq_length, FLAGS.eval_split)
     eval_file = os.path.join(FLAGS.output_dir, eval_file_base)
+
 
     file_based_convert_examples_to_features(
         eval_examples, label_list, FLAGS.max_seq_length, tokenize_fn,

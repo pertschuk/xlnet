@@ -42,6 +42,4 @@ python run_classifier.py \
   --model_config_path=${GS_ROOT}/${LARGE_DIR}/xlnet_config.json \
   --init_checkpoint=${GS_ROOT}/${LARGE_DIR}/xlnet_model.ckpt \
   --max_seq_length=128 \
-  --eval_batch_size=8 \
-  --num_hosts=1 \
-  --num_core_per_host=8
+  --num_hosts=1

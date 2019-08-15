@@ -8,12 +8,12 @@ export LARGE_DIR=xlnet_cased_L-24_H-1024_A-16
 python run_classifier.py \
   --use_tpu=True \
   --tpu=${TPU_NAME} \
-  --do_train=False \
   --do_eval=True \
+  --predict_dir=${GS_ROOT}/fever_predict \
   --task_name=fever \
   --data_dir=./${FEVER_DIR} \
-  --output_dir=${GS_ROOT}/fever_output \
-  --model_dir=${GS_ROOT}/exp1/fever \
+  --output_dir=${GS_ROOT}/fever \
+  --model_dir=${GS_ROOT}/exp/fever \
   --uncased=False \
   --spiece_model_file=${LARGE_DIR}/spiece.model \
   --model_config_path=${GS_ROOT}/${LARGE_DIR}/xlnet_config.json \

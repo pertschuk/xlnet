@@ -578,7 +578,9 @@ def get_model_fn(n_class):
         loss = tf.metrics.mean(values=per_example_loss, weights=is_real_example)
         return {
             'eval_accuracy': accuracy,
-            'eval_loss': loss}
+            'eval_loss': loss,
+            'predictions': predictions
+        }
 
       def regression_metric_fn(
           per_example_loss, label_ids, logits, is_real_example):
